@@ -1,0 +1,26 @@
+.search_block {
+  display: flex;
+  align-items: center;
+  font-size: smaller;
+}
+.search_block button {
+  border: none;
+  margin: 0px;
+  background-color: #dfa0a6;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+.search_block button:hover {
+  background-color: #0351c7;
+}
+
+.search_block input {
+  width: 200px;
+  border: none;
+}
+
+@media screen and (max-width: 800px)  {
+	.search_block {
+margin: 5px 0px;
+	}
+}

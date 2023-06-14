@@ -1,0 +1,37 @@
+.news-block {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	position: relative;
+}
+.news-block img {
+	width: 100%;
+	border-radius: 8px;
+	animation: slide 2000ms linear infinite;
+}
+.news-block :last-child {
+	position: absolute;
+	width: calc(calc(100% - 60px) / 4);
+	top: 0;
+	right: 0;
+	transform:  translate(calc(100% + 20px), 0);
+	animation: slideLast 2000ms linear infinite;
+}
+
+h2 {
+	padding-bottom: 30px;
+}
+
+@keyframes slide {
+	from {
+			transform: translate(0,0);
+	}
+	to {
+			transform: translate(calc(-100% - 20px), 0);
+	}
+}
+@keyframes slideLast {
+	to {
+			transform: translate(0, 0);
+	}
+}

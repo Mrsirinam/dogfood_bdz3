@@ -1,0 +1,34 @@
+.promo {
+	padding: 20px;
+	border: 1px solid;
+	border-radius: 4px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-auto-rows: 40px;
+	align-items: center;
+	grid-column-end: span 2;
+}
+.promo h3 {
+	grid-row-start: 1;
+	font-size: 10px;
+	text-transform: capitalize;
+}
+.promo-pic {
+	width: 100%;
+	height: 100%;
+	grid-column-start: 2;
+	background-image: url("../../assets/images/promo1.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.promo.big {
+	grid-column: 1 / span 4;
+	grid-column: 1 / 5; 
+}
+.promo.small {
+	grid-column-end: span 1;
+}
+.pic2 {
+	background-image: url("../../assets/images/promo2.webp");
+}

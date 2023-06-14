@@ -1,0 +1,51 @@
+.modal-wrapper {
+	position: fixed;
+	background-color: #fff9;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	backdrop-filter: blur(1px) grayscale(50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.my-modal {
+	max-width: calc(100% - 40px);
+	max-height: calc(100% - 40px);
+	width: 400px;
+	background-color: darkslateblue;
+	padding: 20px ;
+	border-radius: 4px;
+	box-sizing: border-box;	
+}
+
+
+	form {
+		display: grid;
+		gap: 20px
+	}
+
+	.modal-ctl {
+		display: grid;
+		grid-template-columns:repeat(2, 1fr);
+		gap: 20px;
+	}
+
+	.modal-link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid;
+		cursor: pointer;
+	}
+
+	.modal-link:hover {
+		background-color: silver;
+	}
+
+	label {
+		display: grid;
+		gap: 4px;
+	}
