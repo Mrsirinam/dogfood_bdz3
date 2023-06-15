@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { Table } from "react-bootstrap"
 
 import Ctx from "../context"
 
 const Basket = () => {
 	const { basket, setBasket } = useContext(Ctx)
+	const { goods, setGoods } = useContext(Ctx)
+
 	const setPrice = ({ price, cnt, discount }) => {
 		return price * cnt * (1 - discount / 100)
 	}
@@ -14,6 +17,8 @@ const Basket = () => {
 	const sale = basket.reduce((acc, el) => {
 		return acc + el.cnt * el.price * (1 - el.discount / 100)
 	}, 0)
+
+	// const [goods, setGoods] = useState([]);
 
 	const inc = (id) => {
 		setBasket(prev => prev.map(el => {
@@ -39,10 +44,12 @@ const Basket = () => {
 
 	return <>
 		<h1>Корзина</h1>
-		<table>
-			<thead>
+		{basket.length > 0 && goods.length > 0 && <Table hover>
+
+
+			<thead style={{ textAlign: 'left' }}>
 				<tr>
-					<td>Изображение</td>
+					<td style={{ textAlign: 'left' }}>Изображение</td>
 					<td>Название</td>
 					<td>Количество</td>
 					<td>Цена</td>
@@ -52,7 +59,7 @@ const Basket = () => {
 			</thead>
 			<tbody>
 				{basket.map(el => <tr key={el.id}>
-					<td>
+					<td style={{ textAlign: 'left' }}>
 						<img src={el.img} alt={el.name} height="50" />
 					</td>
 					<td><Link to={`/product/${el.id}`}>{el.name}</Link></td>
@@ -67,13 +74,14 @@ const Basket = () => {
 
 				</tr>)}
 			</tbody>
-			<tfoot>
+			<tfoot >
 				<tr>
 					<td colSpan={3}>Итоговая сумма:</td>
 					<td colSpan={3}>{sale.toFixed(2)} ₽<del>{sum}  ₽</del></td>				</tr>
 			</tfoot>
-		</table>
+		</Table>}
 	</>
 }
 
 export default Basket;
+// style={{ background: '#dfa0a6' }} 

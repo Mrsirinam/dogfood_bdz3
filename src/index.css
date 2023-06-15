@@ -60,11 +60,19 @@ td:first-child {
 thead {
 	text-align: center;
 	font-weight: bold;
+	background-color: #dfa0a6;
+
+	
 
 }
 
 tbody td {
 	border-bottom: 1px solid silver;
+}
+
+tfoot {
+	background-color: #dfa0a6;
+
 }
 
 tfoot td {
@@ -86,5 +94,5 @@ font-weight: bold;
 tfoot del {
 	padding-left: 10px;
 	font-size: .8em;
-	color: silver;
+	color: gray;
 }
